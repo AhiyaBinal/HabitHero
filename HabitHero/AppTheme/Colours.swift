@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum AppColor {
+    static let primary = Color("Primary") // asset name
+    static let background = Color("Background")
+    static let accent = Color("Accent")
+}
