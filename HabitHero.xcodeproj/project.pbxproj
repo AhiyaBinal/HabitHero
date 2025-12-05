@@ -44,6 +44,7 @@
 			membershipExceptions = (
 				CoreData/HabitService.swift,
 				ViewModels/HabitViewModel.swift,
+				Views/SwiftUI/AddHabitView.swift,
 				Views/SwiftUI/HabitListView.swift,
 			);
 			target = B142AE872ED79E2500ED4E24 /* HabitHeroTests */;
@@ -52,6 +53,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ViewModels/HabitViewModel.swift,
+				Views/SwiftUI/AddHabitView.swift,
 				Views/SwiftUI/HabitListView.swift,
 			);
 			target = B142AE942ED79E3F00ED4E24 /* HabitHeroUITests */;
