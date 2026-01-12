@@ -8,11 +8,9 @@
 import Foundation
 import SwiftUI
 
-enum AppFont {
-    static func title(_ size: CGFloat = 20) -> Font {
-        Font.system(size: size, weight: .bold)
-    }
-    static func body(_ size: CGFloat = 16) -> Font {
-        Font.system(size: size, weight: .regular)
-    }
+extension Font {
+    //Add New Habit Page Font
+    static let bodyRegular = Font.system(size: 17, weight: .regular)
+    static let bodyTitle = Font.system(size: 17, weight: .bold)
+    static let segmentTitle = Font.system(size: 14, weight: .semibold)
 }

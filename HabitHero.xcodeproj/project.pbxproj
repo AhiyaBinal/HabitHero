@@ -21,19 +21,11 @@
 			remoteGlobalIDString = B13941372EBBDE7B0034585A;
 			remoteInfo = HabitHero;
 		};
-		B142AE9B2ED79E3F00ED4E24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B13941302EBBDE7B0034585A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B13941372EBBDE7B0034585A;
-			remoteInfo = HabitHero;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B13941382EBBDE7B0034585A /* HabitHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B142AE882ED79E2500ED4E24 /* HabitHeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitHeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B142AE952ED79E3F00ED4E24 /* HabitHeroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitHeroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9990F2EDF826A004E8339 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1E999102EDF826A004E8339 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,21 +34,25 @@
 		B1E999062EDF67D9004E8339 /* Exceptions for "HabitHero" folder in "HabitHeroTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppTheme/Colours.swift,
+				AppTheme/Constants.swift,
+				AppTheme/Fonts.swift,
+				CoreData/CoreDataManager.swift,
 				CoreData/HabitService.swift,
+				CoreData/Model.xcdatamodeld,
+				Models/HabitModel.swift,
 				ViewModels/HabitViewModel.swift,
-				Views/SwiftUI/AddHabitView.swift,
+				Views/SwiftUI/AddNewHabitView.swift,
+				Views/SwiftUI/Components/ColouredSection.swift,
+				Views/SwiftUI/Components/CustomSegmentedSelector.swift,
+				Views/SwiftUI/Components/GoalSectionView.swift,
+				Views/SwiftUI/Components/GoalUnitPickerSheet.swift,
+				Views/SwiftUI/Components/RoundedInputStyle.swift,
+				Views/SwiftUI/Components/SelectedRowStyle.swift,
+				Views/SwiftUI/Components/WeekdayPickerView.swift,
 				Views/SwiftUI/HabitListView.swift,
 			);
 			target = B142AE872ED79E2500ED4E24 /* HabitHeroTests */;
-		};
-		B1E999072EDF67D9004E8339 /* Exceptions for "HabitHero" folder in "HabitHeroUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ViewModels/HabitViewModel.swift,
-				Views/SwiftUI/AddHabitView.swift,
-				Views/SwiftUI/HabitListView.swift,
-			);
-			target = B142AE942ED79E3F00ED4E24 /* HabitHeroUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -65,7 +61,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				B1E999062EDF67D9004E8339 /* Exceptions for "HabitHero" folder in "HabitHeroTests" target */,
-				B1E999072EDF67D9004E8339 /* Exceptions for "HabitHero" folder in "HabitHeroUITests" target */,
 			);
 			path = HabitHero;
 			sourceTree = "<group>";
@@ -73,11 +68,6 @@
 		B142AE892ED79E2500ED4E24 /* HabitHeroTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HabitHeroTests;
-			sourceTree = "<group>";
-		};
-		B142AE962ED79E3F00ED4E24 /* HabitHeroUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HabitHeroUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -97,13 +87,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B142AE922ED79E3F00ED4E24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -114,7 +97,6 @@
 				B1E999102EDF826A004E8339 /* Habit+CoreDataProperties.swift */,
 				B139413A2EBBDE7B0034585A /* HabitHero */,
 				B142AE892ED79E2500ED4E24 /* HabitHeroTests */,
-				B142AE962ED79E3F00ED4E24 /* HabitHeroUITests */,
 				B13941392EBBDE7B0034585A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,7 +106,6 @@
 			children = (
 				B13941382EBBDE7B0034585A /* HabitHero.app */,
 				B142AE882ED79E2500ED4E24 /* HabitHeroTests.xctest */,
-				B142AE952ED79E3F00ED4E24 /* HabitHeroUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,29 +158,6 @@
 			productReference = B142AE882ED79E2500ED4E24 /* HabitHeroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B142AE942ED79E3F00ED4E24 /* HabitHeroUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B142AE9D2ED79E3F00ED4E24 /* Build configuration list for PBXNativeTarget "HabitHeroUITests" */;
-			buildPhases = (
-				B142AE912ED79E3F00ED4E24 /* Sources */,
-				B142AE922ED79E3F00ED4E24 /* Frameworks */,
-				B142AE932ED79E3F00ED4E24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B142AE9C2ED79E3F00ED4E24 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				B142AE962ED79E3F00ED4E24 /* HabitHeroUITests */,
-			);
-			name = HabitHeroUITests;
-			packageProductDependencies = (
-			);
-			productName = HabitHeroUITests;
-			productReference = B142AE952ED79E3F00ED4E24 /* HabitHeroUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,10 +172,6 @@
 						CreatedOnToolsVersion = 26.1;
 					};
 					B142AE872ED79E2500ED4E24 = {
-						CreatedOnToolsVersion = 26.1;
-						TestTargetID = B13941372EBBDE7B0034585A;
-					};
-					B142AE942ED79E3F00ED4E24 = {
 						CreatedOnToolsVersion = 26.1;
 						TestTargetID = B13941372EBBDE7B0034585A;
 					};
@@ -239,7 +193,6 @@
 			targets = (
 				B13941372EBBDE7B0034585A /* HabitHero */,
 				B142AE872ED79E2500ED4E24 /* HabitHeroTests */,
-				B142AE942ED79E3F00ED4E24 /* HabitHeroUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,13 +206,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B142AE862ED79E2500ED4E24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B142AE932ED79E3F00ED4E24 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,13 +233,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B142AE912ED79E3F00ED4E24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,11 +240,6 @@
 			isa = PBXTargetDependency;
 			target = B13941372EBBDE7B0034585A /* HabitHero */;
 			targetProxy = B142AE8C2ED79E2500ED4E24 /* PBXContainerItemProxy */;
-		};
-		B142AE9C2ED79E3F00ED4E24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B13941372EBBDE7B0034585A /* HabitHero */;
-			targetProxy = B142AE9B2ED79E3F00ED4E24 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -436,6 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4F78VC7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -443,6 +378,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +403,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4F78VC7G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -474,6 +411,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,44 +469,6 @@
 			};
 			name = Release;
 		};
-		B142AE9E2ED79E3F00ED4E24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binal.HabitHeroUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HabitHero;
-			};
-			name = Debug;
-		};
-		B142AE9F2ED79E3F00ED4E24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binal.HabitHeroUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HabitHero;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -595,15 +495,6 @@
 			buildConfigurations = (
 				B142AE8F2ED79E2500ED4E24 /* Debug */,
 				B142AE902ED79E2500ED4E24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B142AE9D2ED79E3F00ED4E24 /* Build configuration list for PBXNativeTarget "HabitHeroUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B142AE9E2ED79E3F00ED4E24 /* Debug */,
-				B142AE9F2ED79E3F00ED4E24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

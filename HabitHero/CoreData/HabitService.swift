@@ -9,9 +9,8 @@ import Foundation
 internal import CoreData
 
 protocol HabitServiceProtocol {
-     func createHabit(title: String)
+     func createHabit(from form: HabitModel)
      func fetchHabits() -> [Habit]
-     func updateHabit(_ habit: Habit, newTitle: String)
      func deleteHabit(_ habit: Habit)
 }
 
@@ -19,12 +18,19 @@ final class HabitService: HabitServiceProtocol {
     
     private let context = CoreDataManager.shared.context
 
-    func createHabit(title: String) {
+    func createHabit(from form: HabitModel) {
         let habit = Habit(context: context)
         habit.id = UUID()
         habit.timestamp = Date()
-        habit.title = title
-
+        habit.habitTitle = form.habitTitle
+        habit.habitDescription = form.habitDescription
+        habit.habitType = form.habitType.rawValue
+        habit.startDate = form.startDate
+        habit.endDate = form.endDate
+        habit.isEveryday = form.isEveryDay
+        habit.taskDays = form.selectedDaysText
+        habit.timeRange = form.timeRange.rawValue
+        habit.goalUnit = form.goalUnit.rawValue
         CoreDataManager.shared.save()
     }
 
@@ -40,11 +46,6 @@ final class HabitService: HabitServiceProtocol {
             print("Fetch error: \(error.localizedDescription)")
             return []
         }
-    }
-
-    func updateHabit(_ habit: Habit, newTitle: String) {
-        habit.title = newTitle
-        CoreDataManager.shared.save()
     }
 
     func deleteHabit(_ habit: Habit) {
