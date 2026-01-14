@@ -32,9 +32,7 @@ class HabitViewModel: ObservableObject {
         form.isEveryDay || !form.taskDays.isEmpty
 
     }
-//    var hasSelectedTaskDays: Bool {
-//        form.selectedDaysText != Constants.none
-//    }
+
     var firstValidationError: AlertScene? {
            if !hasHabitTitle {
                return .missingTitle
@@ -48,9 +46,7 @@ class HabitViewModel: ObservableObject {
             if !isTaskDaysValid {
                 return .noTaskDays
             }
-//           if !hasSelectedTaskDays {
-//               return .noTaskDays
-//           }
+
            return nil
        }
     var showValidationAlert = false
