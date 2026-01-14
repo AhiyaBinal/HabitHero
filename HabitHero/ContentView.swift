@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            MyUIKitViewControllerRepresentable()
-                .frame(height: 300)
+        TabView {
+            NavigationStack { HabitListView() }
+                .tabItem { Label(Constants.home, systemImage: Constants.homeImage)
+            }
+            NavigationStack { HabitListView() }
+            .tabItem { Label("Report", systemImage: "chart.bar.fill") }
         }
-        .padding()
+           // MyUIKitViewControllerRepresentable()
+             //   .frame(height: 300)
     }
 }
 

@@ -7,10 +7,36 @@
 
 import Testing
 
-struct MockHabitService {
+@testable import HabitHero
 
-    @Test func <#test function name#>() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class MockHabitService: HabitServiceProtocol {
+
+    // MARK: - Tracking Calls
+
+    private(set) var didCreateHabit = false
+    private(set) var didFetchHabits = false
+    private(set) var didDeleteHabit = false
+
+    private(set) var createdHabitForm: HabitModel?
+    private(set) var deletedHabit: Habit?
+
+    var stubbedHabits: [Habit] = []
+
+    // MARK: - Protocol Methods
+
+    func createHabit(from form: HabitModel) {
+        didCreateHabit = true
+        createdHabitForm = form
     }
 
+    func fetchHabits() -> [Habit] {
+        didFetchHabits = true
+        return stubbedHabits
+    }
+
+    func deleteHabit(_ habit: Habit) {
+        didDeleteHabit = true
+        deletedHabit = habit
+    }
 }
+

@@ -10,25 +10,36 @@ internal import CoreData
 
 struct HabitListView: View {
 
+    @StateObject private var vm = HabitViewModel(service: HabitService())
     @State private var showAddHabit = false
 
     var body: some View {
-        NavigationView {
-            VStack{
-                
-            }
-            .navigationTitle("Habits")
-            .toolbar{
-                Button {
-                    showAddHabit = true
-                } label: {
-                    Image(systemName: "plus.circle.fill").font(.title2)
+        NavigationStack {
+            List {
+                ForEach(vm.habits, id: \.id) { habit in
+                    VStack(alignment: .leading) {
+                        Text(habit.habitTitle ?? "")
+                            .font(.headline)
+                    }
                 }
-                .accessibilityIdentifier("addHabitButton")
+                .onDelete(perform: vm.deleteHabit)
             }
-            .sheet(isPresented: $showAddHabit) {
-                AddHabitView()
+            .navigationTitle(Constants.habitListTitle)
+            .navigationDestination(isPresented: $showAddHabit) {
+                   AddNewHabitView()
+               }
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear { vm.loadHabits() }
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showAddHabit = true
+                    } label: {
+                        Image(systemName: Constants.addHabitImage).font(.title2)
+                    }
+                }
             }
+            .toolbarBackground(.visible, for: .navigationBar)
         }
     }
 }

@@ -11,8 +11,8 @@ import SwiftUI
 struct HabitHeroApp: App {
     var body: some Scene {
         WindowGroup {
-           // ContentView()
-            HabitListView()
+            ContentView()
+           // HabitListView()
         }
     }
 }
