@@ -42,6 +42,15 @@
 				CoreData/Model.xcdatamodeld,
 				Models/HabitModel.swift,
 				ViewModels/HabitViewModel.swift,
+				Views/SwiftUI/AddNewHabitView.swift,
+				Views/SwiftUI/Components/ColouredSection.swift,
+				Views/SwiftUI/Components/CustomSegmentedSelector.swift,
+				Views/SwiftUI/Components/GoalSectionView.swift,
+				Views/SwiftUI/Components/GoalUnitPickerSheet.swift,
+				Views/SwiftUI/Components/RoundedInputStyle.swift,
+				Views/SwiftUI/Components/SelectedRowStyle.swift,
+				Views/SwiftUI/Components/WeekdayPickerView.swift,
+				Views/SwiftUI/HabitListView.swift,
 			);
 			target = B142AE872ED79E2500ED4E24 /* HabitHeroTests */;
 		};

@@ -46,9 +46,7 @@ class HabitViewModel: ObservableObject {
             if !isTaskDaysValid {
                 return .noTaskDays
             }
-//           if !hasSelectedTaskDays {
-//               return .noTaskDays
-//           }
+
            return nil
        }
     var showValidationAlert = false
